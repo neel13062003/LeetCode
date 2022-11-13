@@ -1,5 +1,10 @@
 class Solution {
 public:
+    
+    //Time complexity = O(m*n)  where m=word1.length() & n=word2.length();
+    //But using longest common subsequence
+    
+    
     int minDistance(string word1, string word2) {
         int m=word1.size(), n=word2.size();
         int dp[m+1][n+1];
