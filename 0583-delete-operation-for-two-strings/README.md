@@ -25,7 +25,10 @@
 </ul>
 	
 <ul>
-	<li> Link = https://youtu.be/VSrsUkoG0bk </li>		
+	<li> Link = https://youtu.be/VSrsUkoG0bk </li>	
+	<li> iNSTEAD of using this apprach of longest common subsquence we can use approach directly if same chracter we not add+1 instead we just only 
+	put same dp[i-1][j-1] as previos wherer wrod1[i][j] and word[i][j] equal then if not eqal than add 1+min(left,right) adjecent;
+ 	</li>
 </ul>
 	
 </div>
