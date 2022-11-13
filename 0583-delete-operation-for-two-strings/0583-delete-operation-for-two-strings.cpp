@@ -22,5 +22,8 @@ public:
         }
         int x=dp[m][n];
         return m+n-(2*x);
+        
+        /*int length=lcs(word1,word2);           //lcs=longest common subsquence
+        return word1.length()+word2.length()-2*length;*/
     }
 };
