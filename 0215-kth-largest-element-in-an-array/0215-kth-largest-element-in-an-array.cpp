@@ -8,5 +8,7 @@ public:
 			while(q.size()>k){q.pop();}
 		}
 		return q.top();
+        
+        //sorting thi na kari devo 
     }
 };
