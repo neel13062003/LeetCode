@@ -35,8 +35,9 @@ class Solution {
         int count=0;
         for(int i=0;i<V;i++){
             if(!vis[i]){
-                count++;
+                
                 dfs(i,adjList,vis);           //dfs(starting node,adjcey list,visited);
+                count++;
             }
         }
         
