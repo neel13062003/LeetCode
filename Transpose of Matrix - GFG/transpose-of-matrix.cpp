@@ -9,12 +9,26 @@ class Solution
     //Function to find transpose of a matrix.
     void transpose(vector<vector<int> >& matrix, int n)
     { 
-        //One Wy
+        //One Way
         for(int i=0;i<n;i++){
             for(int j=0;j<i;j++){
                 swap(matrix[i][j],matrix[j][i]);
             }
+        }/*
+        int row=matrix.size();
+        int col=matrix[0].size();
+        vector<vector<int>>B(col,vector<int>(row,0));
+        //Second Way
+        for(int i=0;i<col;i++){
+            for(int j=0;j<row;j++){
+                B[i][j]=matrix[j][i];
+            }
         }
+        for(int i=0;i<col;i++){
+            for(int j=0;j<row;j++){
+                cout<<B[i][j]<<" ";
+            }
+        }*/
     }
 };
 
