@@ -9,7 +9,7 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution {
+/*class Solution {
 public:
     vector<int>ans;  //Must Be Declare Outside
     vector<int> inorderTraversal(TreeNode* root) {
@@ -20,4 +20,44 @@ public:
         
         return ans;
     }
+};*/
+
+
+
+
+class Solution{
+    public:
+    
+    void PrintInorder(TreeNode* root,vector<int>&ans){
+        if(!root){
+            return;
+        }
+        PrintInorder(root->left,ans);
+        ans.push_back(root->val);
+        PrintInorder(root->right,ans);
+    }
+    
+    vector<int>inorderTraversal(TreeNode* root){
+        vector<int>ans;
+        PrintInorder(root,ans);
+        return ans;
+    }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
