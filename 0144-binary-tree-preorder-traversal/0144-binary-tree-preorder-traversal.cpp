@@ -33,19 +33,36 @@ public:
 //Iterative= > Using Stack
 class Solution {
 public:
-    //O(n)=Time COmplexity  & O(n)=no. of node= O(height of tree). 
-    void printPreorder(TreeNode* root,vector<int>&ans){
-         if(!root){
-             return;
-         }
-          ans.push_back(root->val);
-          printPreorder(root->left,ans);
-          printPreorder(root->right,ans);
-    }
-    
+    //preorder => root left right
     vector<int> preorderTraversal(TreeNode* root) {
-        vector<int>ans;
-        printPreorder(root,ans);
-        return ans;
+        vector<int>preorder;
+        if(root==NULL)return preorder;
+        
+        stack<TreeNode*>st;
+        st.push(root);
+        
+        while(!st.empty()){
+            root=st.top();
+            st.pop();
+            preorder.push_back(root->val);
+            if(root->right!=NULL){
+                st.push(root->right);
+            }
+            if(root->left!=NULL){
+                st.push(root->left);
+            }            
+        }
+        return preorder;
     }
 };
+
+
+
+
+
+
+
+
+
+
+
