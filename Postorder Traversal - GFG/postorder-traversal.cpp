@@ -123,21 +123,21 @@ struct Node
     struct Node* right;
 }; */
 
-
-vector<int> printPO(Node* root,vector<int>&ans){
-    if(root==NULL){
-        return ans;
+void printPO(Node* root,vector<int>&ans){
+        if(root==NULL){
+            return;
+        }
+        printPO(root->left,ans);
+        printPO(root->right,ans);
+        ans.push_back(root->data);
+        
     }
-    printPO(root->left,ans);
-    printPO(root->right,ans);
-    ans.push_back(root->data);
-    return ans;
-}
-
 
 //Function to return a list containing the postorder traversal of the tree.
-vector <int> postOrder(Node* root){
+vector <int> postOrder(Node* root)
+{
     vector<int>ans;
-    printPO(root,ans);
-    return ans;
+        printPO(root,ans);
+        return ans;
+  // Your code here
 }
