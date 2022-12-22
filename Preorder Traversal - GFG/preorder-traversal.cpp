@@ -128,21 +128,18 @@ struct Node
 };
 */
 
-
-void PrintPreorder(Node*  root,vector<int>&ans){
-    if(!root){
-        return;
+void printPreorder(Node* root,vector<int>&ans){
+         if(!root){
+             return;
+         }
+          ans.push_back(root->data);
+          printPreorder(root->left,ans);
+          printPreorder(root->right,ans);
     }
-    ans.push_back(root->data);
-    PrintPreorder(root->left,ans);
-    PrintPreorder(root->right,ans); 
-} 
-
-
 //Function to return a list containing the preorder traversal of the tree.
 vector <int> preorder(Node* root){
-    vector<int>ans;
-    PrintPreorder(root,ans); 
-    return ans;
+     vector<int>ans;
+        printPreorder(root,ans);
+        return ans;
   
 }
