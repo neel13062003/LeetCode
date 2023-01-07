@@ -17,6 +17,8 @@ public:
 //O(n) = Time complexity
 //O(1) = Space Complexity
 
+//Immediatedly take decision each and every day either take or not.
+
 //It works because You only need to When you have on stock in your hand until you can't sell this stock.
 
 //Otherwise this testcase might give wrong 
