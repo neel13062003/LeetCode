@@ -53,3 +53,42 @@ public:
         return count;*/
     }
 };
+
+
+// O(n log log n)
+
+
+/*
+class Solution {
+public:
+    //Tle
+    bool isPrime(int n){
+        if(n==1){
+            return false;
+        }
+        int count=0;                       //  O(logn)
+        for(int i=1;i*i<=n;i++){           //i<=sqrt(n) => n * log(n)
+            if(n%i==0){
+                count++;
+                if(n/i!=i){
+                    count++;
+                }
+            }   
+        }
+        if(count==2){
+                return true;
+        }else{
+              return false;
+        }
+    }
+    
+    int countPrimes(int n) {
+        int count=0;
+        for(int i=1;i<n;i++){
+            if( isPrime(i) == true ){
+                count++;
+            }
+        }
+        return count;
+    }
+};*/
