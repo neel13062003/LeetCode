@@ -8,6 +8,7 @@ public:
         return ans;*/
         
         
+        /*
         // if both the numbers left and right is same, return anyone
         if(left==0 || right ==0) return 0;
 
@@ -20,7 +21,36 @@ public:
         while(left<right){
             res &= ++left;
         }
-        return res;
+        return res;*/
+        
+        int answer=0;
+        for(int bit=30 ; bit >= 0 ;bit--){
+            if( (left&(1<<bit)) != (right & (1<<bit))  ){
+                break;
+            }else{
+                answer |= (left&(1<<bit));
+            }
+        }
+        return answer;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
     }
