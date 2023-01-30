@@ -8,40 +8,40 @@ using namespace std;
 
 class Solution {
     
- private:
-    void dfs(int node,vector<int> adjList[],int vis[]){
+  private:
+    void dfs(int node,vector<int>adjList[] ,int vis[]){
         vis[node]=1;
-        for(auto it:adjList[node]){
-            if(!vis[it]){
-                dfs(it,adjList,vis);
+        for(auto it:adjList[node]){    //it's called For Each Loop
+             if(!vis[it]){
+                dfs(it,adjList,vis);                
             }
         }
     }
     
   public:
     int numProvinces(vector<vector<int>> adj, int V) {
-        //Adjcency Metrix is Given
-        vector<int> adjList[V];
-        for(int i=0;i<V;i++){
-            for(int j=0;j<V;j++){
-                if(i!=j && adj[i][j]==1){
-                    adjList[i].push_back(j);
-                    adjList[j].push_back(i);
-                }
-            }
-        }
-        //Above We creating Adjceny list from given adjceny metrix
-        int vis[V]={0};
-        int count=0;
-        for(int i=0;i<V;i++){
-            if(!vis[i]){
-                
-                dfs(i,adjList,vis);           //dfs(starting node,adjcey list,visited);
-                count++;
-            }
-        }
-        
-        return count;
+          //Find Connected Components.
+          //Solving In Adjecny list Is Better
+          
+          //1) Convert Ajency matrix - > Acednchy list
+          vector<int> adjList[V];
+          for(int i=0;i<V;i++){
+              for(int j=0;j<V;j++){
+                  if(adj[i][j] ==1 && i!=j){
+                      adjList[i].push_back(j);
+                      adjList[j].push_back(i);
+                  }
+              }
+          }
+          int vis[V]={0};
+          int count=0;
+          for(int i=0;i<V;i++){
+              if(!vis[i]){
+                  count++;
+                  dfs(i,adjList,vis);
+              }
+          }
+          return count;
     }
 };
 
