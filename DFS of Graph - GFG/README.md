@@ -6,7 +6,7 @@
 <p><br>
 <span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
-<pre style="position: relative;"><span style="font-size:18px"><strong>Input: </strong>V = 5 , adj = [[2,3,1] , [0], [0,4], [0], [2]]
+<pre><span style="font-size:18px"><strong>Input: </strong>V = 5 , adj = [[2,3,1] , [0], [0,4], [0], [2]]
 </span><img alt="" src="https://media.geeksforgeeks.org/img-practice/graph-1659528381.png" style="height:300px; width:300px"><span style="font-size:18px">
 <strong>Output:</strong> 0 2 4 3 1
 <strong>Explanation</strong>: 
@@ -17,12 +17,12 @@
 4 is connected to 2.
 so starting from 0, it will go to 2 then 4,
 and then 3 and 1.
-Thus dfs will be 0 1 2 4 3.</span>
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+Thus dfs will be 0 2 4 3 1.</span>
+</pre>
 
 <p><span style="font-size:18px"><strong>Example 2:</strong></span></p>
 
-<pre style="position: relative;"><span style="font-size:18px"><strong>Input:</strong> V = 4, adj = [[1,3], [2,0], [1], [0]]
+<pre><span style="font-size:18px"><strong>Input:</strong> V = 4, adj = [[1,3], [2,0], [1], [0]]
 </span><img alt="" src="https://media.geeksforgeeks.org/img-practice/graph(1)-1659528893.png" style="height:300px; width:300px"><span style="font-size:18px">
 <strong>Output:</strong> 0 1 2 3
 <strong>Explanation</strong>:
@@ -33,7 +33,7 @@ Thus dfs will be 0 1 2 4 3.</span>
 so starting from 0, it will go to 1 then 2
 then back to 0 then 0 to 3
 thus dfs will be 0 1 2 3. </span>
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p><br>
 <span style="font-size:18px"><strong>Your task:</strong><br>
