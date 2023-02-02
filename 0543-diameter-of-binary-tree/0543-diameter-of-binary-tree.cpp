@@ -10,8 +10,7 @@
  * };
  */
 class Solution {
-    
-    private:
+private:
     int height(TreeNode* node,int &diameter){
         if(node==NULL){
             return 0;
@@ -30,21 +29,3 @@ class Solution {
         return diameter;
     }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
