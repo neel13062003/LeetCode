@@ -11,13 +11,30 @@
  */
 class Solution {
 public:
+    //In BST it will give me reuslt in only Log(n) time.
     TreeNode* searchBST(TreeNode* root, int val) {
         while(root!=NULL && root->val!=val){
-                root= val< root->val ? root->left:root->right;
+            root= val < root->val ? root->left : root->right;
         }
         return root;
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
