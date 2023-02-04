@@ -7,7 +7,8 @@ public:
         int second=max(mn_index,mx_index);
         int n=nums.size();
         if(first==second){
-            return min(first+1,n-first);
+            //return min(first+1,n-first);
+            return 1;
         }
         int left=second+1;
         int right=n-first;
