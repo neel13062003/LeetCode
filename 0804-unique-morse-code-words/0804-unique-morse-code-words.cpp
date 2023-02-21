@@ -14,7 +14,7 @@ public:
             }
             int ans =  st.size();
         return ans;*/
-        vector<string> morse_codes = {
+        /*vector<string> morse_codes = {
             ".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",
             ".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",
             ".--","-..-","-.--","--.."
@@ -27,6 +27,17 @@ public:
             }
             transformations.insert(transformation);
         }
-        return transformations.size();
+        return transformations.size();*/
+        string m[26] = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+
+   
+        unordered_set<string> ans;
+        for (auto & w : words) {
+            string mw;
+            for (auto & c : w) mw += m[c - 'a'];
+            ans.insert(mw);
+        }
+        return ans.size();
+
     }
 };
