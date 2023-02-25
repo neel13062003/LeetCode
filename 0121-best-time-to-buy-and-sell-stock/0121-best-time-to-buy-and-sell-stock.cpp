@@ -13,7 +13,8 @@ public:
         }
         return maxi;*/
         
-        //O(n)
+        //Time Complexity = O(n)
+        //Space Complexity = O(1)
         int mini=prices[0];
         int cost,profit=0;
         for(int i=1;i<prices.size();i++){
