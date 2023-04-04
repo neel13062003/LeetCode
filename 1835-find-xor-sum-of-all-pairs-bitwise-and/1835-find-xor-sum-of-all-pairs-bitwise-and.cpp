@@ -14,12 +14,12 @@ public:
 //         }
         
 //         return xorSum;
-         int x = 0,y = 0;
-        for(auto &i: arr1){
-            x ^= i;
+         int x = arr1[0],y = arr2[0];
+        for(int i=1;i<arr1.size();i++){
+            x ^= arr1[i];
         }
-        for(auto &i: arr2){
-            y ^= i;
+        for(int i=1;i<arr2.size();i++){
+            y ^= arr2[i];
         }
         return (y&x);
     }
