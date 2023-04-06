@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //Sliding Window Technique
     int numSubarrayProductLessThanK(vector<int>& nums, int k) {
         if (k <= 1) { // special case when k is 0 or 1
             return 0;
@@ -19,4 +20,3 @@ public:
         return count;
     }
 };
-
