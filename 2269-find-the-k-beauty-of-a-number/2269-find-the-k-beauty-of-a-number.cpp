@@ -1,7 +1,5 @@
 class Solution {
 public:
-    
-    
     //Must Be Solve in O(n)
     int divisorSubstrings(int num, int k) {
       string number = to_string(num);
