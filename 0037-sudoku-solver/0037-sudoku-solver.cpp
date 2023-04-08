@@ -1,3 +1,7 @@
+//Space Complexity = O(1)
+//Time Complexity = 9^81 = Numebers Of Digit(0-9) ^ 81 = Each cell possibility of 9 (81 Times 9) 
+
+
 class Solution {
 public:
     bool solve(vector<vector<char>>&board){
