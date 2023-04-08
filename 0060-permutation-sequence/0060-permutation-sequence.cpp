@@ -59,3 +59,7 @@ public:
         return result;
     }
 };
+
+/*For the previous question, the time complexity of the original solution is O(n * n!), where n is the number of digits. This is because we are generating all the permutations of the digits, which takes O(n!) time, and for each permutation, we are iterating over the n digits to create a vector of characters, which takes O(n) time. So the overall time complexity is O(n * n!).
+
+For the optimized solution, the time complexity is O(n^2), which is much faster than the previous solution. This is because we are computing the factorials and the indices of the digits in O(n) time, and then iterating over the digits from right to left, which takes O(n) time. So the overall time complexity is O(n^2).*/
