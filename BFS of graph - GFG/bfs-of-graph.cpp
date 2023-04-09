@@ -6,28 +6,31 @@ using namespace std;
 class Solution {
   public:
     // Function to return Breadth First Traversal of given graph.
+    
+    //Number of Nodes=V , adjecely list=adj
+    //Space Complexity = 0(3N)-O(N)-Queue+Vector+array
+    //Time Complexity = O(Nodes + Total Digrre(2E));
     vector<int> bfsOfGraph(int V, vector<int> adj[]) {
-        
-        int vis[V]={0};      //assuming graph is 0 based indexing otherwise change.
-        vis[0]=1;
-        
-        queue<int>q;
-        q.push(0);
-        
-        vector<int>bfs;
-        while(!q.empty()){
-            int node=q.front();
-            q.pop();
-            bfs.push_back(node);
-            
-            for(auto it:adj[node]){
-                if(!vis[it]){
-                    vis[it]=1;
-                    q.push(it);
-                }
-            }
-        }
-        return bfs;
+         int vis[V]={0};
+         vis[0]=1;
+         
+         queue<int>q;
+         q.push(0);       //assuming graph is 0 indexing.
+         
+         vector<int>bfs;
+         while(!q.empty()){
+             int node = q.front();
+             q.pop();
+             bfs.push_back(node);
+             
+             for(auto it:adj[node]){
+                 if(!vis[it]){
+                     vis[it]=1;
+                     q.push(it);
+                 }
+             }
+         }
+         return bfs;
     }
 };
 
