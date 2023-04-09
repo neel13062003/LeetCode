@@ -10,6 +10,8 @@ private:
   }
 public:
      //Number of Total Connected Component
+    //Space Complexity = AdjceyList + StacksPACE(Skew Worst Case-ALL Node)
+    //Time Complexity  =   0(N) + O(V+2E) =  O(N)
     int findCircleNum(vector<vector<int>>& isConnected) {
         //Matrix --> Adjency List
         int v = isConnected.size();
