@@ -4,6 +4,8 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
+    //Space Complexity = 0(N)nodes+ O(N)vis + StackSpace O(N) = O(N)        
+    //Time Complexity = O(N + AllNeibours-2E)    
         
   private:
     void dfsTraversal(int node,vector<int>&dfs,int vis[],vector<int>adj[]){
