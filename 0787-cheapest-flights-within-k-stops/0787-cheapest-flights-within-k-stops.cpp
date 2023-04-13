@@ -1,36 +1,31 @@
 class Solution {
 public:
     int findCheapestPrice(int n, vector<vector<int>>& flights, int src, int dst, int k) {
-        vector<map<int, int>> links(n, map<int, int>());
-        for (auto& flight : flights)
-        {
-            links[flight[0]][flight[1]] = flight[2];
+        vector<vector<pair<int, int>>> adj(n);
+        
+        for(auto flight : flights) {
+            adj[flight[0]].push_back({flight[1], flight[2]});
         }
-        int i = k;
-        queue<pair<int, int>> q;
-        // stop, cost
-        q.push(pair<int,int>(src, 0));
-        int cost = INT_MAX;
-        vector<int> costs(n, INT_MAX);
-        costs[src] = 0;
-        while (!q.empty() && i >= 0)
-        {
-            int s = q.size();
-            for (int j = 0; j < s; j++)
-            {
-                auto from = q.front();
-                q.pop();
-                for (auto& flight : links[from.first])
-                {
-                    if (costs[flight.first] > from.second + flight.second)
-                    {
-                        costs[flight.first] = from.second + flight.second;
-                        q.push(pair(flight.first, from.second + flight.second));
+        
+        vector<int> dist(n, INT_MAX);
+        vector<int> prev(n, -1);
+        
+        dist[src] = 0;
+        
+        for(int i = 0; i <= k; i++) {
+            vector<int> temp = dist;
+            for(int j = 0; j < n; j++) {
+                for(auto edge : adj[j]) {
+                    int u = j, v = edge.first, w = edge.second;
+                    if(dist[u] != INT_MAX && dist[u] + w < temp[v]) {
+                        temp[v] = dist[u] + w;
+                        prev[v] = u;
                     }
                 }
             }
-            i--;
+            dist = temp;
         }
-        return costs[dst] == INT_MAX ? -1 : costs[dst];
+        
+        return dist[dst] == INT_MAX ? -1 : dist[dst];
     }
 };
