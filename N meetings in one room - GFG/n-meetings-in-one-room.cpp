@@ -6,7 +6,10 @@ using namespace std;
 class Solution{
     public:
     static bool cmp(pair<int,int>& A, pair<int,int>& B){
-        return A.second < B.second || (A.second == B.second && A.first < B.first);
+        //return A.second < B.second || (A.second == B.second && A.first < B.first);
+     return A.second < B.second;
+    
+        
     }
 
     
