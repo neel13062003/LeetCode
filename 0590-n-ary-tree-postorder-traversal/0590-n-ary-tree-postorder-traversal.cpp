@@ -20,8 +20,7 @@ public:
 
 class Solution {
 public:
-    
-     void traverse(Node*root,vector<int> &ans){
+   void traverse(Node*root,vector<int> &ans){
         if(root==NULL)  return;
         for(auto x:root->children){
             traverse(x,ans);
@@ -35,10 +34,3 @@ public:
         return ans;
     }
 };
-
-
-
-
-
-
-
