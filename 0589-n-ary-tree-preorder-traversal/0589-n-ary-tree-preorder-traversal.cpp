@@ -20,7 +20,6 @@ public:
 
 class Solution {
 public:
-    
     void printPreorder(Node* root,vector<int>&ans){
         if(root==NULL)return ;
         ans.push_back(root->val);
@@ -35,22 +34,3 @@ public:
         return ans;
     }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
