@@ -11,39 +11,32 @@
  */
 class Solution {
 public:
-    bool isCousins(TreeNode* root, int x, int y) {
-        queue<pair<TreeNode*, pair<int, int>>> q;
-        q.push({root, {0, 0}});
-        int xlevel, ylevel;
-        int xparent, yparent;
-        
-        while(!q.empty()) {
-            TreeNode* temp = q.front().first;
-            int h = q.front().second.first;
-            int par = q.front().second.second;
-            q.pop();
-            
-            if(temp -> val == x) {
-                xlevel = h;
-                xparent = par;
-            }
-            else if(temp -> val == y) {
-                ylevel = h;
-                yparent = par;
-            }
-            if(temp -> left) {
-                q.push({temp -> left, {h+1, temp -> val}});
-            }
-            if(temp -> right) {
-                q.push({temp -> right, {h+1, temp -> val}});
-            }
+    /*
+1. Run BFS 
+2. While traversing take the sum of the child nodes & also keep storing the node in a buffer
+3. After each stage of the BFS, traverse the buf & update the node with value sum - (child's sum)
+*/
+
+TreeNode* replaceValueInTree(TreeNode* root) {
+    root->val = 0;
+    queue<TreeNode*> q;  q.push(root);
+    while(!q.empty()){
+        int n = q.size(), sum = 0;
+        vector<TreeNode*> buf;
+        while(n--){
+            TreeNode* node = q.front(); q.pop();
+            buf.push_back(node);
+            if(node->left) { q.push(node->left); sum += node->left->val; }
+            if(node->right){ q.push(node->right); sum += node->right->val; }
         }
-        
-        if(xlevel == ylevel) {
-            if(xparent != yparent) {
-                return true;
-            }
+        for(auto node: buf){
+            int  t = sum;
+            if(node->left)  t -= node->left->val;
+            if(node->right) t -= node->right->val;
+            if(node->left)  node->left->val = t;
+            if(node->right) node->right->val = t;
         }
-        return false;
+    }
+    return root;
     }
 };
