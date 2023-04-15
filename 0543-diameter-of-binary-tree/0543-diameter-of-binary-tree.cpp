@@ -10,8 +10,8 @@
  * };
  */
 class Solution {
-private:
-    int height(TreeNode* node,int &diameter){
+public:
+   int height(TreeNode* node,int &diameter){
         if(node==NULL){
             return 0;
         }
